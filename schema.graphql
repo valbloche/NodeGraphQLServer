@@ -1,0 +1,23 @@
+type Report{
+    id: ID
+    name: String
+    utcsaved: String
+    columns: [Column]
+}
+
+type Column{
+    id: ID
+    name: String
+    color: String
+    customname: String
+}
+
+type Query {
+    Reports: [Report]
+    Report(id: ID!): Report
+}
+
+type Mutation {
+    createReport(name: String): Report
+    deleteReport(id: ID!): Report
+}
